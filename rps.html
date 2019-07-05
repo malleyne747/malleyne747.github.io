@@ -1,0 +1,138 @@
+
+<!DOCTYPE>
+
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link href="https://fonts.googleapis.com/css?family=Warnes" rel="stylesheet">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+ integrity="sha384-BVYiiSIFeK1dGhttps://github.com/TheOdinProject/curriculummJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+  crossorigin="anonymous">
+
+
+
+
+<script>
+var personchoice ="";
+var pcpts =0;
+var plpts =0;
+var round=0;
+
+function computerPlay(){
+
+var choiceArr = ["ROCK","PAPER","SCISSORS"];
+
+choice = randnums(0,2);
+
+//console.log(choice);
+return choiceArr[choice];
+
+
+}
+
+function personPlay(){
+ // var personchoice = prompt("please choose  ROCK , PAPER or SCISSORS");
+ personchoice = prompt("Please select ROCK, PAPER or SCISSORS");
+  personchoice = personchoice.toUpperCase();
+switch (personchoice){
+    case "ROCK":
+    return "ROCK";
+    case "PAPER":
+    return "PAPER"
+    case "SCISSORS":
+    return "SCISSORS";
+
+}
+
+
+ // return personchoice;
+}
+
+
+function randnums( min,  max){
+//  return Math.floor((Math.random() * max) + min);
+return   Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+function playRound( playerSelection,  computerSelection){
+
+ //console.log("/n"); // begin with a newline
+ if( playerSelection == computerSelection){pcpts++; plpts++; return ("this round is a draw"); }// handle draw return ctrl
+ else if(playerSelection == "ROCK" && computerSelection == "SCISSORS"){plpts++; return("You Won! ROCK Beats SCISSORS"); }// hanlde player win return ctrl
+ else if(playerSelection == "ROCK" && computerSelection == "PAPER"){pcpts++; return("You Lost! ROCK Loses to PAPER"); }// handle player loss return ctrl
+ else if(playerSelection == "SCISSORS" && computerSelection == "ROCK"){pcpts++; return("You Lost! SCISSORS Loses to ROCK"); }//handle player loss return ctrl
+ else if(playerSelection == "SCISSORS" && computerSelection == "PAPER"){plpts++;return("You Won! SCISSORS Beats PAPER"); }//handle player win return ctrl
+ else if(playerSelection == "PAPER" && computerSelection == "ROCK"){plpts++; return("You Won! PAPER Beats ROCK"); }//handle player win return ctrl
+ else if(playerSelection == "PAPER" && computerSelection == "SCISSORS"){pcpts++; return("You Lost! SCISSORS Beats PAPER"); }//handle player loss return ctrl
+else{
+ return "invalid choice! game starting over now."; //("Invalid Choice try again! press enter to continue.");
+
+}
+ }
+function ROCKwin(){
+
+   $('#winimg').attr('src','ROCK.png');
+    $('#winimg').css("visibility","visible");
+
+//alert("Hello world!");
+
+}
+function PAPERwin(){
+
+   $('#winimg').attr('src','PAPER.png');
+    $('#winimg').css("visibility","visible");
+
+//alert("Hello world!");
+
+}
+function SCISSORSwin(){
+
+   $('#winimg').attr('src','SCISSORS.png');
+    $('#winimg').css("visibility","visible");
+
+//alert("Hello world!");
+
+}
+function gameBegin(){
+  prompt("Welcome to rock, paper, scissors press enter to begin.\n");
+
+}
+function promptRound(round, playerSelection, computerSelection){
+
+  //
+}
+
+ function game(){
+
+gameBegin();
+var msg ="";
+   for(var i =5; i >0; i--){
+     if(i > 0 ){ // iterate including zero but no further
+       msg = playRound(personPlay(),computerPlay());
+       if(msg === "invalid choice! game starting over now."){ msg = playRound(personPlay(),computerPlay()); i = 5; } // step back one decrement step
+      console.log(msg);
+
+     }
+
+    }
+
+   if(plpts > pcpts){ prompt("you won the game!");}
+   if(plpts < pcpts){ prompt("you lost the game! ):");}
+   if(plpts == pcpts){ prompt("the game is a draw! /:");}
+    else
+        prompt("error");
+    //
+
+
+ }
+
+$(document).ready(game());
+</script>
+<body>
+
+   </body>
+
+</html>
