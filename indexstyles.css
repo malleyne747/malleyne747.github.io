@@ -22,15 +22,23 @@ i{
 body{
 	background-image: url("bg-image.jpg"); 
 }
-li:hover{
+ul li:hover{
 	color: #ffa500;
 
 }
-li{
+ul li{
 	color: #4db8ff;
 }
 .resume{
 	height:600px;
 	width: 700px;
+
+}
+.codetxt{
+	overflow-y: scroll;
+}
+.styled-link{
+	color: red;
+	text-decoration: underline;
 
 }

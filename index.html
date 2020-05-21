@@ -52,8 +52,29 @@ function printResume(){
 }
 
 function printWork(){
-	$("div.border1").replaceWith(`<div class="resume col-sm border1 rounded col-spacing "> <!-- Resume section -->
-      <h3>Recent Work</h3> <embed src="resources/resume-pdf.pdf" type="application/pdf" width="100%" height="100%"> </div> `); 
+	$("div.border1").replaceWith(`<div class=" col-sm border1 rounded col-spacing"> <!-- contact section -->
+      <h3>Recent Project</h3> 
+      <div class="row"> 
+      	<p class="col">Description: Airtable Script Block for Stock Calculations via Rest API </p>
+      	<p> This script was created using the Airtable Script block API and the financial modelling prep API.<br>
+      		https://financialmodelingprep.com/developer/docs/ , https://airtable.com/developers/scripting/api
+      		<br>This script will populate the airtable fields "Last Close" and "Change" with the latest closing price and 5 day percent change in closing price for the stock Symbols listed below the first field "Name"</p>
+      </div>
+      <div class="row">
+      	<h3>Instructions:</h3>
+      	<ol> 
+      		<li>go to airtable.com and signup for a free account </li>
+      		<li>once logged copy this sample base: https://airtable.com/tblWys5aO04UUtXGP/viwwCBiucPPfqfpnM</li>
+      		<li>click blocks in the upper right corner</li>
+      		<li>click install a block in upper right corner</li> 
+      		<li>select "Scripting" to install script block editor</li>
+      		<li>paste js contents in txt file in editor</li>
+      		<li>click run after entering the desired stock symbols in the "Name" column </li> 
+      		<a class="styled-link" href="airtable-js.txt"> file here</a>
+
+      	</ol>
+      </div>
+     </div> `); 
 }
  </script>
 }
@@ -69,7 +90,7 @@ function printWork(){
   	<ul class="list-group">
   		<li onclick="printAbout()" class="list-group-item"> About me </li>
   		<li onclick="printContact()" class="list-group-item"> Contact </li>
-  		<li onclick="printAbout()" class="list-group-item"> Recent work </li> 
+  		<li onclick="printWork()" class="list-group-item"> Recent work </li> 
   		<li onclick="printResume()" class="list-group-item"> Resume </li>
   	</ul>
     <div class="col-sm border1 rounded col-spacing "> <!-- about section -->
@@ -79,10 +100,14 @@ function printWork(){
       <p> Some of my interests outside of work include Music, Travel and Food.</p> 
       <p> Thank you for taking the time to view my Page! you may click "Resume" to the left in order to view an embeded version of my resume and download a copy of it.</p>  
     </div>
-    <div class="col-sm border2 rounded col-spacing "> <!-- Linkedin section -->
+    
+     <div class="col-sm border2 rounded col-spacing "> 
       <h3> Linkedin </h3> 
-      <div id="li-badge"><div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="dark" data-vanity="michael-alleyne-126aa8191"><a class="LI-simple-link" href='https://www.linkedin.com/in/michael-alleyne-126aa8191?trk=profile-badge'>michael alleyne</a></div></div>
-  </div>
+      <div id="li-badge">
+      	<div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="dark" data-vanity="michael-alleyne-126aa8191"><a class="LI-simple-link" href='https://www.linkedin.com/in/michael-alleyne-126aa8191?trk=profile-badge'>michael alleyne</a>
+      	</div>
+  	  </div>
+    </div> 
     
     </div>
 </div>
