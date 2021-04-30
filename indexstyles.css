@@ -32,6 +32,7 @@ ul li{
 .resume{
 	height:600px;
 	width: 700px;
+	overflow: hidden; 
 
 }
 .codetxt{
